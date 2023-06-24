@@ -1,0 +1,228 @@
+/* CSS position(Vị Trí)
+    - Position chỉ định loại phương pháp định vị được sử dụng cho 1 phần tử 
+    - Thuộc tính Position trong CSS dùng để xác định vị trí hiện thị cho thẻ HTML và thường được dùng để xây dựng CSS cho menu đa cấp,tooltip hoặc 1 số chức năng khác.Position có 5 value sau:
+        + static(tĩnh)
+        + relative(tương đối)
+        + absolute(tuyệt đối)
+        + fixed(cố định)
+        + sticky(dính)
+
+*/
+body{
+    height: 2000px;
+}
+
+    /* Position:Relative( Vị trí tương đối)
+    - relative cho phép ta định vị  vi trí của nó trên trang web
+    - các value của relative:
+        + top
+        + right
+        + bottom
+        + left
+
+    */
+.demorelative{
+    width: 300px;
+    height: 200px;
+    background-color: blueviolet;
+    position: relative;
+    top: 20px;
+}
+
+/* Position: absolute( Vị trí tuyệt đối)
+    - Absolute là vị trí tuyệt đối được định vị tương đối 
+    - Vị trí căn chỉnh tính từ relative , để căn chỉnh vị trí của absolute ta dùng: top , bottom , right , left. 
+    - absolute có thể nhận các giá trị âm
+*/
+.demoabsolute{
+    width: 100px;
+    height: 100px;
+    background-color: tomato;
+    position: absolute;
+    top: 0;
+    right: -10px;;
+
+}
+
+/* Position: relative và absolute
+    relative như một cái bàn , absolute như 1 viên bi . viên bi có thể lăn tới bất kỳ vị trí nào trên cái bàn hoặc lăn ra ngoài cái bàn.
+*/
+.relative{
+    width: 110px;
+    height: auto;
+    background-color: #ccc;
+    padding: 15px;
+    border-radius: 20px 5px ;
+    font-weight:bolder;
+    position: relative;
+    left: 50px;
+    
+}
+.absolute{
+    list-style-type:circle;
+    list-style-position: inside;
+    width: 100px;
+    height: inherit;
+    background-color: rgb(116, 95, 134);
+    padding: 10px 10px;
+    border-radius: 20px 5px ;
+    position: absolute;
+    bottom: -105px;
+    left: 0px;
+    display: none;
+
+    
+}
+
+.relative:hover .absolute{
+    display: block;
+    transform: scale(1.3);
+    
+}
+
+/* Position : static (tĩnh) 
+    - Position:static là giá trị mặc định của thuộc tính Position.Khi sử dụng value này,phần tử sẽ được hiển thị ở vị trí mà nó xuất hiện và không bị di chuyển 
+    - Không thể sử dụng các value: top , right , bottom , left
+*/
+.static{
+    width: 110px;
+    height: auto;
+    background-color: #ccc;
+    padding: 20px;
+    border-radius: 20px 5px ;
+    font-weight:bolder;
+    position: static;
+    left: 100px;
+}
+
+/*  Position:fixed(cố định)
+    - Position:fixed là giá trị cố định,khi khai báo thuộc tính thì nó sẽ nằm ở vị trí đó dù ta có cuộn trang tới đâu
+    - Static sử dụng được cả 4 value: top , bottom , right , left
+ */
+.fixed{
+    width: 110px;
+    height: auto;
+    background-color: #ccc;
+    padding: 20px;
+    border-radius: 20px 5px ;
+    font-weight:bolder;
+    position: fixed;
+    bottom: 20px;
+    left: 200px;
+}
+
+/*  Position:sticky
+    - Position:sticky được định vị theo vị trí cuộn trang,Khi cuộn trang xuống dưới thì nó sẽ dính vào đầu trang
+    - Position:sticky có các value như sau:
+        + top
+        + right
+        + bottom
+        + left
+*/
+.sticky{
+    width: 100%;
+    background-color: #ccc;
+    list-style: upper-roman ;
+    list-style-position: inside;
+    padding: 20px ;
+    border-radius: 20px 5px ;
+    font-weight:bolder;
+    position: sticky;
+    top: 10px;
+    justify-content: space-between;
+    display:flex;
+}
+
+
+/*  Z-index
+    - Z-index: là thuộc tính xác định vị trí đứng của 1 phần tử trong không gian ba chiều (3D) , nó quyết định cho phần tử vào được hiển thị trước hoặc sau,thuộc tính nào có z-index cao thì nằm trên và z-index thấp thì nằm dười 
+    - Z-index sử dụng trong trường hợp:có khai báo css position:absolute thì mới dùng z-index
+    - Z-index: có thể nhận giá trị âm hoặc dương
+    - Nếu 2 phần tử có cùng giá trị z-index thì thẻ nào nằm dưới sẽ được hiển thị lên phía trên và thẻ con sẽ nằm trên thẻ cha
+    - Giá trị mặc định của thể z-index của thẻ HTML là 1, khi đó thẻ HTML nằm dưới sẽ đè lên thẻ HTML nằm phía trên
+*/
+
+        /*  Trường hợp : thẻ con nằm trên thẻ cha */
+/* .test1{
+    width: 200px;
+    height: 200px;
+    background-color: green;
+    position: absolute;
+    z-index: 2;
+}
+.test2{
+    width: 200px;
+    height: 100px;
+    background-color: red;
+}*/
+
+        /* Tường hợp : thẻ nằm dưới sẽ hiển thị phía trên */
+.test1{
+    width: 200px;
+    height: 200px;
+    background-color: green;
+    z-index: 1;
+    position: absolute;
+}
+.test2{
+    width: 200px;
+    height: 100px;
+    background-color: red;
+    position: absolute;
+    z-index: 1;
+}
+
+/*  Overflow 
+    - Overflow kiểm soát những gì xảy ra với content quá lớn với cái vùng chứa nó
+    - Khi content của phần tử quá lớn so lớn kích thước của phần tử thì content đó bị tràn ra khỏi khu vực 
+    - Các value của overflow là:
+        + Visible(dễ thấy): Phần tràn ra ngoài vùng chứa vẫn được hiển thị
+        + Hidden(ẩn): Phần tràn ra ngoài vùng chứa xe được ẩn đi
+        + scroll(cuộn): Hiện thị thanh cuộn để xem những phần ở ngoài vùng chứa
+        + auto:Tương tự như scroll nhưng nó chỉ thêm thanh cuộn khi cần thiết
+    - Overflow-x : Nội dung bị tràn ra theo chiều ngang.Các value của overflow đều sử dụng được cho overflow-x
+    - Overflow-y : Nội dung bị tràn ra theo chiều dọc.Các value của overflow đều sử dụng được cho overflow-y
+*/
+.over{
+    margin-left: 50px;
+    max-width: 300px;
+    height: 200px;
+    background-color: red;
+    margin-top: 120px;
+    overflow: auto;
+    /* max-width khi thu nhỏ lại thì cũng giảm kích thước xuống còn width thì không */
+}
+
+.flow{
+    margin-left: 50px;
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    margin-top: 120px;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+}
+
+/*  CSS Float
+    - Css Float chỉ định các phần tử sẽ được nổi lên
+    - Định vị và định dạng nội dung
+    - Khi sử dung thuộc tính float thì các phần tử block sẽ chuyển thành inline , các phần tử ở dưới sẽ dồn lên trên thay vào phần bị trống 
+    - Các value : right , left , none
+*/
+
+.demo1{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    float: right;
+    clear: both;
+}
+
+.demo2{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    /* float: left; */
+}
+

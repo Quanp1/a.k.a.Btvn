@@ -1,0 +1,240 @@
+/*  CSS Specificity : Tính đặc hiệu
+    - Css Specificity để xác định thức tự ưu tiên áp dụng thuộc tính css
+    - Viết Css theo kiểu Inline
+    - Selector dựa theo ID : #test ,#demo....
+    - Selector dựa theo Class , lớp giả , bộ trọn attribute
+    - Selector dựa theo element , phần tử giả
+
+    - Bắt đầu từ số 0 , Thêm 1 cho mỗi selector theo Phần tử , Thêm 10 cho mỗi selector theo kiểu ID , Thêm 100 cho mỗi selector theo kiểu Class , Thêm 1000 cho viết CSS inline
+
+        !important : infinity
+        +Khai báo sau value
+
+    - Inline > Internal > External
+    - Inline > ID > Class > Attribute > Pseudo-class > Pseudo-element > Element 
+*/
+
+/*  Độ đặc hiệu là 10 */
+.test{
+    background-color: red ;
+    font-size: 20px;
+}
+/*  Độ đặc hiệu là 1 + 10 = 11 */
+p.test{
+    font-size: 30px;
+}
+/*  Độ đặc hiệu là 100 */
+#test{
+    font-weight: 500;
+}
+/*  Độ đặc hiệu là 100 + 1 = 101 */
+p#test{
+    font-weight: 700;
+}
+/*  Độ đặc hiệu là 1 + 10 + 100 = 111 */
+p.test#test{
+    font-size: 40px;
+}
+
+/* Nếu Specificity bằng nhau thì thằng nào được khai báo sau sẽ được ưu tiên  */
+h1{
+    background-color: red;
+}
+h1{
+    background-color: yellow;
+}
+
+/* ID > Attribute */
+/* 1 + 100 =101 */
+div#a{
+    background-color: green;
+}
+/*  1 + 10 =11 */
+div[id="a"]{
+    background-color: blue;
+}
+
+/*  Internal > External */
+h2{
+    background-color: aqua;
+}
+
+/*  Attribute > Pseudo-class */
+h3:hover{
+    background-color: yellow;
+}
+h3[class="3"]{
+    background-color: rgb(149, 45, 175);
+}
+
+/*  !important
+    - Khi 1 giá trị được khai báo !important thì giá trị đấy sẽ đè lên tất cả các giá trị khác 
+    - Nếu cùng 1 element được khai báo 2 lần thì sẽ set đến Specificity(Tính đặc hiệu) mà ta Selector 
+*/
+
+/*  Phần tử được khai báo !important sẽ ghi đè lên tất cả 
+    Nếu phần tử được khai báo 2 lần !important sẽ ưu tiên theo Specificity(Tính đặc hiệu)
+*/
+h4{
+    background-color: red !important;
+}
+h4#ace{
+    background-color: blue !important;
+}
+#ace{
+    background-color: green;
+}
+
+
+/*  Math function : CSS Hỗ trợ 1 số hàm trong toán học để tính toán các value 
+    VD : 
+        + Calc()
+        + Max()
+        + Min()
+*/
+
+/*  Calc() là 1 function cho phép tính toán giá trị của 1 thuộc tính
+    Cú pháp :
+        + Thuộc tính CSS : calc(expresstion)
+        + expresstion là biểu thức tính toán + - * /
+*/
+.div{
+    width : calc(100% - 100px);
+    height: 200px;
+    background-color: red;  
+}
+
+/*  Max() tìm giá trị lớn nhất từ danh sách mà ta đưa vào
+    Cú pháp :
+        + Thuộc tính CSS : Max(value1 , value2 , ...)
+    
+*/
+
+.max{
+    /* Bình thường thì max sẽ là 50% nhưng khi kéo màn hình cho px nhỏ xuống dưới 700px thì max sẽ được chuyển thành 350px  */
+    width: max(350px , 50%);
+    background-color: yellow;
+    height: 200px;
+}
+
+
+/*              CSS3
+    - Border-radius :
+    - Text effects :
+    - Prefix :
+*/
+
+/*  Border-radius Dùng để bẻ cong các góc của phần tử
+    - Cú pháp : 
+        + Border-top-left-radius : value
+        + Border-top-right-radius : value
+        + Border-bottom-right-radius : value
+        + Border-bottom-left-radius : value
+        + Border-radius : (top-left) (top-right) (bottom-right) (bottom-left)
+
+    - border-radius: 10px;
+        4 góc được bo tròn 10px
+
+    - border-radius: 10px 20px;
+        top-left and bottom-right : 10px
+        top-right and bottom-left : 20px
+    
+    - border-radius: 10px 20px 30px;
+        top-left : 10px
+        top-right and bottom-left : 20px
+        bottom-right : 30px
+    
+    - border-radius: 10px 20px 30px 40px;
+        top-left : 10px
+        top-right : 20px
+        bottom-right : 30px
+        bottom-left : 40px 
+
+
+    - 1 góc có thể nhận 2 giá trị 
+    - Border-raidus: 10px 12px 10px 20px / 12px 20px 22px 16px
+
+    border-radius: 10px / 15px;
+        + 4 vị trí top và bottom được bo tròn 10px
+        + 4 vị trí right left được bo tròn 15px
+
+    - border-radius: 10px 20px / 12px 15px;
+        + Ở vị trí số 1 thì top được bo tròn: 10px Và left được bo tròn 12px
+        + Ở vị trí số 3 thì bottom được bo tròn 10px và right được bo tròn 12px
+        + Ở vị trí số 2 thì top được bo tròn 20px và right được bo tròn 15px
+        + Ở Vị trí số 4 thì bottom được bo tròn 20px và left được bo tròn 15px
+
+    - border-radius: 10px 12px 10px  / 12px 20px 22px 
+        + Ở vị trí số 1 thì top được bo tròn 10px và left được bo tròn 12px
+        + Ở vị trí số 3 thì bottom được bo tròn 10px và right được bo tròn 22px
+        + Ở vị trí số 2 thì top được bo tròn 12px và right được bo tròn 20px
+        + ở vị trí số 4 bottom được bo tròn 12px và left được bo tròn 20px
+    
+    - Border-raidus: 13px 15px 6px 22px / 2px 90px 34px 65px
+        + Ở vị trí số 1 thì top được bo tròn 13px và left được bo tròn 2px
+        + Ở vị trí số 2 thì top được bo tròn 15px và right được bo tròn 90px
+        + Ở vị trí số 3 thì bottom được bo tròn 6px và right được bo tròn 34px
+        + Ở vị trí số 4 thì bottom được bo tròn 22px và left được bo tròn 65px
+
+*/
+.radius{
+    width: 180px;
+    height: 180px;
+    background-color: chocolate;
+    background-image: linear-gradient(50deg,rgb(43,27,139),rgb(201,1,123));
+    border-radius: 53% 47% 54% 26% / 29% 52% 48% 30% ;
+}
+
+
+/*  Text-effects
+    - Text-effects là tạo hiệu ứng cho văn bản 
+        + Text-overflow
+        + Word-wrap
+        + Word-break
+        + Writing-mode
+*/
+
+/*  Text-overflow(Chữ tràn ra ngoài viền) 
+    - Text-overflow : ellipsis   là hiển thị dấu chấm khi văn bản vượt quá ô chứa
+    - Text-overflow : clip   là không hiển thị chữ ngoài ô chứa
+
+    - Khi sử dụng text-overflow thì phải khai báo thêm 
+        + overflow : hidden;
+        + display : -webkit-box
+        + -webki-line-clamp : 1 or 2 or ... Thuộc tính giúp hiện thị số dòng trước dấu ba chấm
+        + webkit-box-clamp:vertical  xác định hướng của các hộp con của phần tử chứa là dọc
+        + display:-webkit-box  xác định phần tử chứa sử dụng kiểu hiển thị của hộp flex dọc
+*/
+.text{
+    max-width: 400px;
+    text-overflow:ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient:vertical;
+    display: -webkit-box;
+    cursor: pointer;
+}
+
+/*  Word-wrap cho phép các từ dài có thể ngắt và xuống dòng tiếp theo 
+    Word-wrap: break-word  cho phép những từ quá dài sẽ xuống hàng
+
+    word-break : break all  cố nhồi nhét từng chữ trên 1 hàng kể cả cắt nửa chữ
+
+    writing-mode : vertical-rl giúp viết chữ nằm dọc 
+*/
+p.word {
+    margin-left: 120px;
+    display: block;
+    width: 180px;
+    height: 200px;
+    
+    writing-mode: vertical-rl ;
+}
+
+/* Prefiex : Tiền tố
+    -webkit-transition : all 4s ease;    chorme và safiri
+    -moz-transition : all 4s ease;     firefox
+    -ms-transition : all 4s ease;    ỉnternet explorer
+    -o-transition : all 4s ease;    opera
+    transition : all 4s ease;  
+*/

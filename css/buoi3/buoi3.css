@@ -1,0 +1,77 @@
+div {
+    display: inline-block;
+}
+
+li {
+    /* display: none; */
+    width: max-content;
+}
+
+h1 {
+    width    : 500px;
+    max-width: 400px;
+    /* Khi sử dụng cả thuộc tính width và max-width trên cùng 1 phần tử,
+    Nếu value width lớn hơn value max-width thì thuộc tính width sẽ được bỏ qua
+    còn thuộc tính max-width sẽ dược sử dụng 
+    */
+
+}
+
+ol {
+
+
+    list-style-type : circle;
+    list-style-image: url('../css/checkmark-png-25954.png');
+    line-height     : 1.6px;
+
+}
+
+li::marker {
+    width : 10px;
+    height: 10px;
+}
+
+
+/* Outline
+    - Là một đường được vẽ xung quanh các phần tử,bên ngoài đường các đường viền (border),để làm cho phần tử nổi bật 
+
+    - Outline-style:Chỉ định kiểu đường viền,VD:dotted,dashed,
+    solid,double,groove....
+
+    - Outline-width:Chỉ định chiều rộng của outline,VD:   thin(1px),medium(3px),thick(5px),px,pt,em,rem
+
+    - Outline-color:sử dụng để chỉnh màu cho outline,VD:HEX,RGB,red,blue....
+
+    Shorthand:style width color(thứ tự không quan trọng)
+
+    outline-offset:Tạo thêm 1 đường viền xung quang nội dung.
+*/
+
+h3 {
+    outline-style: dashed;
+    outline-width: medium;
+    outline-color: red;
+    outline-offset: 2px;
+
+}
+
+table,th,td{
+    border: 1px solid #ccc;
+}
+table{
+    width: 300px;
+    height: 100px;
+    /* border-radius: 20%;  Không chạy cùng border-collapse được*/
+    border-collapse: collapse;
+}
+ td{
+    text-align:center;
+}
+th,td{
+    padding: 20px 10px;
+
+}
+table,td,th{
+    /* border-spacing: 30px; */
+} 
+    

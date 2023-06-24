@@ -1,0 +1,309 @@
+/*  CSS Align(Căn chỉnh)
+*/
+/*  Căn giữa 1 phần tử nằm giữa theo chiều ngang bằng margin
+    Margin : auto chỉ áp dụng cho thẻ hiển thị là block
+*/
+.demo{
+    height: 200px;
+    width: 200px;
+    background-color: red;
+    margin: 0 auto;
+    display: block;
+    /* inline là thẻ độ rộng tính theo content */
+} 
+
+/* Căn giữa văn bản theo chiều ngang bằng text-align:center : căn giữa chữ
+    Có thể dùng cho thẻ inline và block
+*/
+p{
+    text-align: center;
+}
+
+/*  Căn giữa theo chiều dọc bằng padding
+    - padding chỉ sử dụng cho block
+    - Khi sử dụng padding không cần set height vì padding tự động tăng chiều dọc
+*/
+span{
+    display: block;
+    width: 200px;
+    background-color: yellow;
+    padding: 30px 0;
+    /* padding tự động tăng chiều dọc */
+    text-align: center;
+}
+
+/*  Căn giữa theo chiều dọc bằng line-height
+    - set value cho line-height bằng height của block đó
+    - Chỉ sử dụng cho block
+*/
+.lineheight{
+    display: block;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    background-color: orange;
+    line-height: 200px;
+}
+
+.parent {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    background-color: green;
+}
+.child {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* top 100% là cả block màu xanh nên khi khai báo top 100% thì chữ sẽ hiện ở bên dưới block nên ta phải dùng cả thuộc tính transform:translate để căn vào giữa block */
+    transform: translate(-50%, -50%);
+}
+
+/*  Ngoài ra còn Position và Transform và Flexbox */
+
+
+/*  CSS Combinators(Bộ trọn kết hợp)
+    - Css combinators là mối quan hệ giữa các elements
+    - VD:
+        + Bộ trọn con cháu
+        + Bộ trọn con 
+        + Bộ chọn anh chị em kề cận
+        + Bộ chọn anh chị em
+*/
+/* Bộ trọn con cháu */
+.dm h2{
+    background-color: red;
+}
+
+/*  Bộ trọn con */
+.dm > h1{
+    background-color: b;
+}
+
+/* Bộ chọn anh chị em */
+.dm h1~h1{
+    color: green;
+}
+
+/* Bộ chọn anh chị em kề cận */
+.dm h1+h1{
+    color: goldenrod;
+}
+
+/*  CSS Pseudo-class(Lớp giả)
+    - Css pseudo : xác định trạng thái đặc biệt của phần tử
+    - Cú pháp : selector:pseudo-class{
+        code css
+    }
+    - VD: 
+        + :hover : Khi di chuột đến phần tử
+        + 3 thẻ sau thì thường áp dụng cho thẻ a 
+            + :visited : Khi ấn vào link 1 lần rồi
+            + :active : khi ấn giữ link
+            + :link : Khi chưa ấn vào link lần nào
+        + :checked : sử dụng cho input checkbox.Khi nhấn vào ô checkbox thì sẽ hiện
+        + :first-child : lấy phần tử đầu tiên của phần tử cha
+        + :last-child : lấy phần tử cuối cùng của phần tử cha
+        + focus : Khi nhấp chuột vào ô input
+        + :nth-child(n) : lấy phần tử thứ n của phần tử cha
+*/
+
+/* :hover */
+h3:hover{
+    color: brown;
+    cursor: pointer;
+}
+
+/* input:checked : Khi nhấn vào ô checkbox thì sẽ hiện thuộc tính */
+input:checked ~ h1{
+    background-color: red;
+}
+
+/*  Tạo sidebar bằng html và css */
+.container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.hamburger{
+    display: none;
+    list-style-type: circle;
+}
+#checkbox{
+    position: absolute;
+    /* Khai báo absolute là để biến biến nó thành phần tử được định vị tuyệt đối so với phần tử relative hoặc với cả màn hình của mình  */
+    top: -9999px;
+    left: -9999px;
+    opacity: 0;
+}
+input:checked~ul{
+    display: block;
+}
+
+/*  -child : chọn phần tử con của thẻ trước dấu : */
+li:first-child{
+    background-color: rgb(23, 152, 228);
+}
+li:nth-child(3){
+    background-color: rgb(235, 143, 5);
+}
+li:last-child{
+    background-color: yellowgreen;
+}
+
+/* input:focus khi ấn vào ô input:text thì sẽ hiện các thuộc tính được khai báo   */
+input:focus + h1{
+    background-color: gray;
+}
+
+
+/*  Pseudo-Elements 
+    Pseudo-element được dùng để tạo kiểu cho các phần tử cụ thể
+    Cú pháp:
+        selector::pseudo-element{
+            code css
+        }
+    VD: Định dạng chữ cái đầu tiên của 1 ptử,before,after...
+        ::first-line
+        ::first-letter
+        ::selection
+        ::marker
+        ::before
+        ::after 
+*/
+
+/* selector::first-line là chọn dòng đầu tiên của selector */
+h1::first-line{
+    color:burlywood;
+}
+
+/* selector::first-letter là chọn ký tự đầu tiên của selector  */
+h1::first-letter{
+    text-transform: uppercase;
+    color: black;
+}
+
+/* selector::selection là những thứ được bôi đen của selector sẽ xuất hiện thuộc tính */
+h1::selection{
+   background-color:palevioletred;
+}
+
+/* selector::marker chỏ đển những selector được đánh dấu sẽ xuất hiện hiện thuộc tính*/
+ul li::marker{
+    background-color: red;
+    font-size:50px;
+}
+
+/* ::after(::before) thêm vào sau hoặc trước selector đó 1 thuộc tính nào đó */
+.hh{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+}
+.hh::after {
+    content: "asdas";
+    position: absolute;
+    bottom: -20px;
+    width: 100px;
+    height: 20px;
+    background-color: grey;
+}
+
+/* Opacity : Xác định độ mờ hoặc độ trong suốt của 1 phần tử
+    Value : 0.0-1.0 Giá trị càng thấp thì càng mờ 
+*/
+
+div:hover{
+    opacity: 0.4; 
+}
+
+/* Attribute selector là cách css cho 1 thẻ bằng thuộc tính
+    Cú pháp : 
+        Tên thẻ[attribute]{}
+        Tên thẻ[attribute="value"]{}
+*/
+
+/* Tên thẻ[attribute]{
+    Code css
+} */
+a[href]{
+    background-color: red;
+}
+
+/* Tên thẻ[attribute="value"]{
+    Code css
+} */
+a[target="_blank"]{
+    font-weight: bolder;
+    font-size: 20px;
+    color: bisque;
+}
+
+/* Tên thẻ[attribute~="value"]{
+    Code css
+}
+    "~" Chỉ cần có value là được 
+*/ 
+img[title~="flower"]{
+    border: 4px solid #222;
+}
+
+
+/*  CSS Units
+    - Css Units là những đơn vị trong css 
+    - VD : px,rem,em,%...
+    - Đối với 1 số thuộc tính CSS thì độ dài được phép âm
+    -       Độ dài tương đối và độ dài tuyệt đối
+        + Độ dài Tuyệt đối là độ dài cố định nên ít dùng vì ảnh hưởng đến việc reponsive 
+         VD : px , cm , mm , pt , pc , in
+
+        + Độ dài Tương đối : Khuyến khích sử dụng => dễ reponsive
+        + VD : % , rem , em , vw , vh
+
+        - Dùng để chỉnh độ rộng,chiều cao phần tử
+        % : ăn theo cha 
+        vw : ăn theo màn hình
+        vh : ăn theo màn hình
+
+        -   Dùng để chỉnh kích thước chữ
+        -Giống : Đều dựa vào kích thước mặc định của font chữ là 16px
+        -Khác :
+            + rem : Có thể thay đổi font-size trong thẻ html
+            + em : Phụ thuộc vào font-size của phần tử cha trực tiếp
+
+*/
+
+
+/*  % : ăn theo cha 
+    vw : ăn theo màn hình */
+.parent{
+    width: 300px;
+    height: 200px;
+    background-color: red;
+}
+.child{
+    width: 60%;
+    height: 100%;
+    /*  % : ăn theo cha 
+        vw : ăn theo màn hình */
+    background-color: blue;
+}
+
+html{
+    font-size: 10px;
+}
+.rem{
+    /* default : 16px 
+    rem : Dựa vào font-size của html
+    */
+    font-size: 2em;
+
+}
+#em{
+    font-size: 20px;
+}
+.em{
+    font-size: 2em;
+}

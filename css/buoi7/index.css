@@ -1,0 +1,255 @@
+/*  CSS3
+    - Transform cho phép di chuyển phần tử ,xoay ,chia tỉ lệ ,làm nghiêng các phần tử
+    - Value :
+        + Translate(X,Y) Di chuyển 1 phần tử khỏi vị trí của nó theo trục X và Y
+            + TranslateX(X)  Chỉ thay đổi theo trục X
+            + Translate(Y)   Chỉ thay đổi theo trục Y
+        + rotate(deg) Cho phép 1 phần tử quay theo chiều kim đồng hồ với deg
+        và cho phép quay ngược chiều kim đồng hồ với giá trị âm
+        + scale(X,Y)  Tăng hoặc giảm kích thước của 1 phần tử . X tương ứng với chiều rộng . Y tương ứng với chiều dài
+        + skew(Xdeg,Ydeg)  Xiên phần tử dọc theo cả trục X và Y
+*/
+.trans{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    /* transform: translate(50px,30px); */
+    -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+            transform: rotate(0deg);
+    /* transform: scale(2,3); */
+    /* transform: skew(352deg,4deg);     */
+    -webkit-transition: all;
+    -o-transition: all;
+    transition: all;
+}
+.trans:hover{
+    -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+            transform: scale(1.2);
+    color: greenyellow;
+    -webkit-transition-duration: 0.76s;
+         -o-transition-duration: 0.76s;
+            transition-duration: 0.76s;
+    -webkit-transition-timing-function: ease-in;
+         -o-transition-timing-function: ease-in;
+            transition-timing-function: ease-in;
+}
+
+/*  Transition Giúp cho các sự kiện chạy mượt mà hơn 
+    - Value :
+        + Transtion-property  Xác định phần tử sẽ bị thuộc tính transition-property làm thay đổi, làm mượt mà sự thay đổi ấy , các phần tử không được khai báo sẽ giữ nguyên 
+        + Transition-duration(thời gian chuyển tiếp)  Xác định thời gian chuyển đổi mất bao nhiêu thời gian 1s , 2s ....
+        + Transition-timing-function : Xác định các thức thay đổi tốc độ của hiệu ứng chuyển tiếp theo thời gian . Các value :
+            + ease   Ban đầu chậm sau đó nhanh dần và khi gần kết thúc thì chậm dần
+            + ease-in    Ban đầu chậm sau đó nhanh dần đều
+            + ease-out    Ban đầu nhanh dần sao đó thì chậm dần
+            + ease-in-out    Ban đầu chậm sau đó tăng tốc và khi gần kết thúc thì chậm dần
+            + linear  Giữ cho tốc độ như nhau 
+        + Transition-delay(trì hoãn)  Sau 1 khoảng thời gian trì hoãn mới thực hiện tiếp các thuộc tính 
+    - Cú pháp ngắn gọn:
+      + Transition : property duration timing-function delay
+*/
+button {
+  background-color: blue;
+  color: white;
+  padding: 10px;
+  border: none;
+  /* transition-property: all;
+  transition-duration: 3s; */
+  -webkit-transition: all 2s ease-out 1s;
+  -o-transition: all 2s ease-out 1s;
+  transition: all 2s ease-out 1s; 
+}
+button:hover {
+  background-color: red;
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
+  /* transition-timing-function: ease-out;
+  transition-delay: 2s; */
+}
+
+/*  Animation :
+  + @keyframes : Xác định trạng thái chuyển động 
+  + animation-name : Tên @keyframes đã được khai báo 
+  + animation-duration(thời gian thực hiện) Xác định thời gian thực hiện trong bao nhiêu s
+  + animation-timing-function() Xác định hiệu ứng của quá trình chuyển đổi
+  + amimation-delay(trì hoãn) Xác định thời gian chờ trước khi thực hiện animation
+  + animation-iternation-count(số lần lặp ) Xác định thời gian lặp lại hoặc infinite(vô tận)
+  + animation-direction(phương hướng) Xác định hướng di chuyển của đối tượng    
+*/
+/*  @keyframes
+    Xác định trạng thái chuyển động 
+    value : 
+      from{
+        code css
+      }
+      to{
+        code css
+      }
+      
+      Hoặc :
+      
+      0%{
+        code css
+      }
+      ...%{
+        code css
+      }
+      100%{
+        code css
+      }
+      Ưu tiên dùng % hơn vì có thể chia thành nhiều giai đoạn nhỏ hơn
+*/
+/*  Animation-timing-function() Xác định hiệu ứng của quá trình chuyển đổi
+    + ease   Ban đầu chậm sau đó nhanh dần và khi gần kết thúc thì chậm dần
+    + ease-in    Ban đầu chậm sau đó nhanh dần đều
+    + ease-out    Ban đầu nhanh dần sao đó thì chậm dần
+    + ease-in-out    Ban đầu chậm sau đó tăng tốc và khi gần kết thúc thì chậm dần
+    + linear  Giữ cho tốc độ như nhau 
+*/
+/*  Animation-direction(phương hướng) Xác định hướng di chuyển của đối tượng    
+    Value : 
+      + normal   di chuyển về phía trước
+      + reverse(đảo ngược)  đảo ngược lại hướng di chuyển ban đầu
+      + alternate(luân phiên)  di chuyển lên đằng trước rồi lại di chuyển về phía sau
+      +alternate-reverse(đảo ngược luân phiên)   đảo ngược lại hướng di chuyển ban đầu rồi lại di chuyển lên phía trước sau đó lại di chuyển về phía sau 
+ */
+/*  Animation-direction(phương hướng) Xác định hướng di chuyển của đối tượng    
+    Value :
+      +
+*/
+.ma{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: blueviolet;
+  -webkit-animation-name: test;
+          animation-name: test;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  animation-direction:alternate-reverse ;
+  /*  shorthand
+      @keyframes
+      animation: name duration timing-function delay iteration-count(số lần lặp) deration(cách di chuyển của phần tử) 
+  */
+  animation: test 6s linear 0.5s infinite alternate;
+}
+@-webkit-keyframes test{
+  0% {
+    border-radius: 50%;
+    background-color: blueviolet;
+    margin-left: 100px;
+  }
+  /* 25%{
+    margin-left: 150px;
+    margin-top: 50px;
+  }
+  50%{
+    border-radius: 0%;
+    background-color: rgb(69, 8, 235);
+    margin-top: 100px;
+    margin-left: 100px
+
+  }
+  75%{
+    margin-left: 50px;
+    margin-top: 50px;
+  } */
+  100% {
+    border-radius: 50%;
+    background-color: blue;
+    margin-left: 200px;
+    /* margin-left: 100px; */
+  }
+}
+
+/*  Prefixe : tiền tố hay thành phần thêm vào hỗ trợ chạy trên các trình duyệt 
+  -webkit-  : hỗ trợ chorme và safari
+  -moz-  : hỗ trợ mozilla firefox
+  -ms-  : hỗ trợ internet explorer
+  -o-  : hỗ trợ opera
+*/
+
+
+/*  CSS Shadow
+  Text-shadow : Bóng cho chữ
+  Box-shadow : Bóng cho khối
+*/
+
+/*  Text-shadow : Đổ bóng cho chữ
+  Value
+    + h-shadow   Bóng đổ theo chiều ngang từ trái sáng phải nếu nhận value dương . Và bóng đổ theo chiều từ phải sang trái nếu nhận value âm
+    + v-shadow    Bóng đổ theo chiều dọc từ trên xuống dưới nếu nhận value dương . Và bóng đổ thêm chiều dọc từ dưới lên trên nếu nhận value âm
+    + blur-radius    Độ mờ của bóng
+    + color     Màu sắc của bóng
+  Cú pháp :
+    Text-shadow : h-shadow  v-shadow  blur-radius  color
+*/
+h1{
+  text-shadow: 5px 2px 3px rgb(230, 207, 6) ;
+}
+
+/*  Box-shadow
+  Tạo bóng cho khối 
+  Value : 
+    + h-shadow  Tạo bóng ngang từ trái sang phải nếu nhận giá trị dương . Và tạo bóng ngang từ phải sang trái nếu nhận giá trị âm 
+    + v-shadow  Tạo bóng dọc từ trên xuống dưới nếu nhận giá trị dương . Và tạo bóng dọc từ dưới lên nếu nhận giá trị âm
+    + blur-radius  Độ nhờe của bóng
+    + spread   Độ to của bóng
+    + color  Màu sắc bóng
+    + inset   Bóng sẽ đổ từ ngoài vào trong thay vì đổ từ trong ra ngoài
+  Cú pháp : 
+    box-shadow : h-shadow   v-shadow   blur-radius   spread   color   inset
+*/
+h2{
+  height: 200px;
+  width: 200px;
+  background-color: gray;
+  margin-left: 200px;
+  border-radius: 20%;
+  box-shadow: 12px 10px 5px 9px rgb(230, 207, 6) ;
+}
+
+
+/*  Object-fit
+  Dùng để điều chỉnh kích thước và vị trí của 1 hình ảnh hoặc video trong vùng chứa giúp hình không bị méo mó và hiển thị ra đúng tỷ lệ
+  Value : 
+    + fill : Hình ảnh được kéo dãn ra để lấp đầy kích thước đã cho
+    + Cover : Giữ nguyên tỉ lệ hình ảnh như ban đầu và lấp đầy kích thước của khung,hình ảnh có thể bị tràn ra ngoài
+    + None : Hình ảnh sẽ không được thay đổi kích thước hoặc vị trí, và có thể tràn ra ngoài phần tử chứa nó.
+    + Contain : Ảnh ban đầu có Width : 1000px và Height : 500px . Tỉ lệ là 2:1
+       Nếu ta set Width:500px , Height:500px và obejct-fit:contain thì hình ảnh vẫn có Width = 500px nhưng heiht sẽ giảm xuống còn 250px và khoảng trắng . 
+    + Scale-down : Nếu : 
+      - Kích thước gốc nhỏ hơn chiều dài và rộng của khung thì giá trị này tương ứng với none
+      - Kích thước gốc lớn hơn chiều dài và rộng của khung thì giá trị này tương ứng với contain
+*/
+
+img {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  background-color: rebeccapurple;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

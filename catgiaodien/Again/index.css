@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
+/* reset css */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.register-container{
+    display: flex;
+    /* justify-content: space-around;
+    align-items: center; */
+}
+
+
+.register-container .register-container_desc{
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.register-container .register-container_desc .register-container_desc-child h2{
+    font-size: 3.125rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.register-container .register-container_desc .register-container_desc-child h3 {
+    font-size: 2.1875rem;
+    font-weight: 500;
+    margin-bottom: 53px;
+    text-transform: capitalize;
+}
+
+.register-container .register-container_desc .register-container_desc-child p{
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+.register-container .register-container_desc .register-container_desc-child a{
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.register-container .register-container_desc .register-container_desc-child a:hover{
+    text-decoration: underline;
+}
+
+
+
+/* register-container_form */
+
+.register-container .register-container_form{
+    width: 50%;
+    height: 100vh;
+    background-color: red;  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.register-container .register-container_form h3{
+    font-size: 1.875rem;
+    font-weight: 500;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+
+.register-container .register-container_form form{
+    display: flex;
+    flex-direction: column;
+    width: 369px;
+    height: 470px;
+    justify-content: space-between;
+    margin-top: 28px;
+}
+
+.register-container .register-container_form form input{
+    height: 62px;
+    border-radius: 10px;
+    border: none;
+    padding-left: 20px;
+    background-color: #f0efff;
+}
+
+
+.register-container .register-container_form form input::placeholder{
+    color: #a7a3ff;
+}
+
+
+.register-container .register-container_form form input:nth-child(4)::after{
+    content: "abc";
+}
+
+
+.register-container .register-container_form form input:last-child{
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: #4d47c3;
+    color: #fff;
+}
+
+
+.register-container .register-container_form p{
+    font-size: 1rem;
+    font-weight: 500;
+    color: #b5b5b5;
+    margin-top: 47px;
+}
+
+

@@ -1,0 +1,110 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Flexbox Dùng để thiết kế layout theo 1 chiều .Ngang hoặc Dọc.
+  Cấu trúc :
+    + flex container(thùng chứa): chứa các flex item
+      + flex item : các phần tử con nằm bên trong flex container
+
+    + Main axis trục ngang trong flex box
+      + Main start : CHỉ định vị trí bắt đầu cho flex item 
+      + Main end : Chỉ định vị trí kết thúc cho flex item
+
+    + Cross axis trục dọc trong flex box
+      + cross start : flex item đầu tiên theo trục dọc
+      + cross end : flex item cuối cùng theo trực dọc
+  
+  Xét các thuộc tính của flexbox cho phần tử cha
+
+  Khi khai báo 1 phần tử là display:flex biến phần tử ấy thành flex container và được sử dụng các thuộc tính sau: 
+    + flex-direction
+
+*/
+
+
+ul {
+  display: flex;
+  list-style: none;
+  background-color: red;
+  max-width: 500px;
+  height: 100px;
+  /* flex-direction(phương hướng) : dùng để chỉ định hướng hiển thị của item
+     Value : 
+        + Row : các item hiển thị từ trái qua phải
+        + column : hiển thị từ trên xuống dưới
+        + -reverse : để thứ tự các phần tử hiển thị bị đảo ngược lại 
+    Khi sử dụng display: flex thì mặc định flex-direction là row 
+  */
+  flex-direction: row;
+
+  /* flex-wrap(bọc) : Kiểm soát các item bọc trong container 
+    Value : 
+      + nowrap : các item giảm theo cha
+      + Wrap : các item sẽ được giữ nguyên kích thước không bị thay đổi . Nếu kích thước container giảm thì các item sẽ chuyển xuống dòng dưới để kích thước vẫn được giữ nguyên
+      + Wrap-reverse : giống wrap nhưng thứ tự các item sẽ bị bảo ngược lại 
+  */
+  flex-wrap:wrap; 
+
+  /* flex-flow : là cách viết gọn của flex-direction và flex-wrap . 
+   flex-flow : flex-direction flex-wrap
+
+  */
+  flex-flow: row wrap;
+
+  /* Justified-content : dùng để căn chỉnh vị trí của các item so với trục chính
+  Value : 
+    + flex-start : đưa các item bắt đầu nằm bên tay trái
+    + flex-end : đưa các item bắt đầu nằm bên tay phải
+    + center : các item nằm ở giữa
+    + space-around : khoảng cách giữa các item gấp đôi khoảng cách giữa item đầu tiên với lề
+    + space-between : khoảng cách giữa các item giãn tối đa không có khoảng cách với lề
+    + space-evenly : khoảng cách giữa các item giãn đều nhau và giãn đều với lề
+  */
+  justify-content: none;
+
+  /* align-item(căn chỉnh) : dùng để căn chỉnh vị trí của các item so với trục dọc
+  Value : 
+    + stretch(duỗi thẳng) : các item kéo dãn tối đa theo trục dọc 
+    + flex-start : Nếu set flex-direction: row thì các item bắt đầu từ trên cùng bên trái theo trục dọc(main axis) . Nếu flex-direction : column thì các item nằm bên trái 
+    + flex-end : Nếu set flex-direction : row thì các item bắt đầu từ dưới cùng bên trái theo trục dọc(cross axis) . Nếu flex-direction : column thì các item nằm bên phải
+    + center : các item nằm giữa bên trái
+    + baseline : nội dùng bên trong item sẽ cùng nằm trên 1 hàng không quan trong item đó lệch nhau
+
+    Ngoài ra còn có align-self áp dụng cho phần tử con cụ thể 
+  */
+  align-items: baseline;
+
+  /* align-content : căn chỉnh các item theo trục dọc
+    Value : 
+      + flex-start
+      + flex-end
+      + center
+      + space-around
+      + spcae-between
+      + stretch
+  */
+
+}
+li{
+  width: 120px; 
+  background-color: gray;
+  justify-content: flex-start;
+
+  /* order giúp thuộc tính nào nổi lên trước */
+  order: 2;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+

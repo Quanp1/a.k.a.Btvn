@@ -1,0 +1,59 @@
+/* css Selector (bộ chọn) */
+
+h1{
+    background-color: royalblue;
+}
+
+p{
+    background-color: aquamarine;
+}
+
+div p{
+    background-color: red;
+}
+#heading{
+    font-size: 50px
+}
+span{
+    font-size: 300;
+}
+
+.test{
+    color: burlywood;
+}
+
+*{
+    color: #fff;
+}
+
+
+div#main h2.title p{
+    background-color: orange;
+}
+
+
+/* background */
+
+h3{
+    color: black;
+    background-color:rgb(0, 255, 255);
+}
+.yaho{
+    background-color: red;
+    background-image: url("https://antimatter.vn/wp-content/uploads/2022/10/hinh-anh-3d.jpg");
+    /* Hiện thị hình ảnh được repeat lại nhiều lần */
+
+    background-repeat: repeat-x;
+    /* Cho phép hiển thị hình ảnh lặp hoặc không lặp lại */
+    
+    background-position: bottom center;
+    /* background-position: trái phải và trên dưới  */
+    
+    background-attachment: fixed;
+    /* background-attachment:Hiển thị pictrure cố định tại vị trí đã chỉ định khi scroll*/
+}
+body{
+    height: 2000px;
+}
+
+

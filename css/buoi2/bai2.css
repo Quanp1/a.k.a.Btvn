@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
+
+/* 
+    1.Css syntax: inline-external-internal
+    2.Css selector: tên thẻ,theo id,theo class and *
+    Note: div#main div #main
+    3.Background:
+    -Background-color:Xét màu nền 
+    -Background-image:url("") Thiết lập hình ảnh cho phần tử
+    -Background-position:Xác định vị trí hình ảnh
+    -Background-repeat:Cho phép hình ảnh lặp lại hoặc không
+    -Background-attachment:Cho phép hình ảnh đứng im hay cuộn theo ảnh
+    
+    Background:Background-image ,Background-repeat,Background-position,Background-attachment
+
+*/
+
+
+/*  Css color 
+    Color name:rgb, hex,hsl,rgba,hsla
+    Dùng color picker để soát màu
+    Rgb(255,0,0):Màu red
+    Rgb(0,255,0):Màu green
+    Rgb(0,0,255):Màu blue
+    Rgb(255,255,255):Màu white
+    Rgb(0,0,0):Màu black
+
+    Hex:#rrggbb
+    Red,green,blue
+    Khoảng màu của Hex nằm trong khoảng từ 00-ff
+
+    #fff:Màu White
+    #000:Màu Black
+    #ff0000:Màu Red
+    #00ff00:Màu Green
+    #0000ff:Màu Blue
+*/
+#color1{
+    color: #ff0000;
+}
+#color2{
+    color:  #00ff00;
+}
+#color3{
+    color: #0000ff;
+}
+
+/* CSS Fonts 
+    Font size:100px;100em...
+        Px:Giá trị phần trăm cố định k phụ thuộc vào cái nào khác
+        %:Phụ thuộc vào thẻ chứ nó:body,head...
+        Rem:Phụ thuộc vào thẻ html
+        Em:Phụ thuộc vào thẻ gần nhất có thuộc tính font-size:25px,50px...
+        Vw(Viewport width):Phụ thuộc vào chiều rộng màn hình
+        Vh(Viewport height):Phụ thuộc vào chiều cao màn hình
+    
+    Font-Family:Quyết định font chữ được sử dụng
+    Font-size:Xác định kích thước chữ
+    Font-weight:Độ dày chữ
+    Font-style:Chữ in thường hoặc in nghiêng
+    
+*/
+
+
+.fontfamily{
+    font-family: 'Source Sans Pro', sans-serif;
+    /* font-family:Lên trang gg font để tìm được nhiều font hơn */
+}
+
+.fontsize{
+    font-size: 50px;
+    /* font-size:Xác định độ to nhỏ của letter */
+}
+
+.fontweight{
+    font-weight: 900;
+    font-weight: normal;
+    font-weight:bold;
+    font-weight: lighter;
+    /* font-weight:Xác định độ đậm của letter từ 0-900
+    font-weight:normal=400
+    font-weight:bold=700
+    font-weight:lighter:cho chữ cái của phần tử con nhạt hơn phần tử cha
+    */
+}
+
+.fontstyle{
+    font-size: initial;
+    font-style: italic; 
+}
+
+.wrapper{
+    color: blue;
+    font-weight: 700;
+}
+.wrapper .one{
+    color: initial;
+    font-weight: initial;
+}
+.wrapper .two{
+    color: inherit;
+}
+
+/* initial & inherit */
+
+#fontsize{
+    font-family:monospace;
+}
+#fontsize2{
+    font: 20em;
+}
+#fontsizepx{
+    font-size: 40px;
+    /* font-size:px:Không phụ thuộc vào đâu */
+}
+#fontsizephantram{
+    width: 50%;
+    height: 100px;
+    background-color: red;
+    /* font-size:%:Phụ thuộc vào thẻ to như body,head...chứa nó */
+}
+
+html{
+    font-size: 20px;
+}
+#fontsizeRem{
+    font-size: 2rem;
+    /* font-size:rem:Phụ thuộc vào font-size của thẻ html */
+}
+
+#fontsizeEm{
+    font-size: 2em;
+    /* fontsize:em:Phụ thuộc vào thẻ gần nhất có thuộc tính fontsize */
+
+}
+#fontsizepVw{
+    height: 100px;
+    background-color: red;
+    /* fontsizeVw:Toàn màn hình chiều cao */
+}
+
+
+/* CSS Link */
+a{
+    color: #000;
+    text-decoration: none;
+    /* text-decoration:none:Xoá bỏ dấu gạch chân */
+    background-color: red;
+    padding: 6px;
+    border-radius: 20px;
+}
+
+
+a:hover{
+    /* a:hover:Khi di chuyển con trỏ chuột đến vị trí thẻ a thì sẽ hiển thị thuộc tính bên trong thẻ hover */
+    background-color: rgb(134, 47, 47);
+}
+
+a:visited{
+    /* a:visited:Khi ấn vào thẻ a 1 lần r thì sẽ hiện thuộc tính thẻ visited */
+    text-decoration: underline;
+}
+
+a:active{
+    background-color: blue;
+    /* a:active:Khi nhấn giữ chuột ở thẻ a thì sẽ hiển thị thuộc tính của thẻ active*/
+}
+
+a:link{
+    background-color: #00ff00;
+    /* a:link:Khi chưa ấn thẻ vào thẻ a thì sẽ hiện thị thuộc tính bên trong thẻ link */
+}
+
+
+/* CSS Border 
+
+    Border-style:Thiết lập loại border
+
+
+*/
+
+
+.border{
+    border-style:solid;
+    /* border-style:Hiển thị đường viền quanh content  */
+    border-width: 2px;
+    /* border-width:Tinh chỉnh độ dày của border */
+    border-color: aqua;
+    /* border-color:Tinh chỉnh màu của border */
+    border-radius: 10px;
+    /* border-radius:Tinh chỉnh 4 góc của border */
+    border: 2px dashed red ;
+    /* border: width style color */
+}
+
+
+/* Margin & Padding
+
+    Margin:Tạo khoảng trắng bên ngoài border
+    Margin nhận các giá trị : px , % , auto , pt ,.....
+*/
+
+
+.margin{
+    background-color: red;
+    height: 200px;
+    width: 200px;
+    margin-bottom: 20px;
+    /* margin-bottom:Tạo khoảng trắng giữa cách lề dưới 20px */
+    margin-left: 20px;
+    /* margin-left:20px:Tạo khoảng cách với lề trái 20px */
+    margin-top: 20px;
+    /* margin-top:20px:Tạo khoảng cách với lề trên 20px */
+    margin-right: 20px;
+    /* margin-right:20px:Tạo khoảng cách với lề phải 20px */
+  
+    margin: 20px;
+    /* Margin:20px: 4 phía cách lề 20px */
+
+    margin: 20px 30px;
+    /* Margin:20px 30px: Trên dưới cách 20px, Phải trái cách 30px */
+
+    margin: 20px 30px 40px;
+    /* Margin:20px 30px: Trên cách 20px, Phải trái cách 30px, Dưới cách 40px */
+
+    margin: 20px 30px 40px 50px;
+    /* margin: 
+    20px:Tạo khoảng cách lề trên 20px
+    30px:Tạo khoảng cách lề phải 30px
+    40px:Tạo khoảng cách lề dưới 40px
+    50px:Tạo khoảng cách lề trái 50px
+
+    Thứ tự lần lượt như chiều quay của kim đồng hồ
+    */
+}
+
+.padding{
+    background-color: blue;
+    height: 200px;
+    width: 200px;
+}
+
+html{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+/* CSS Text
+
+
+
+*/
+
+.color-red{
+    color:red;
+    /* color:red:Đổi màu chữ thành màu đỏ */
+}
+
+.upper{
+    text-transform: uppercase;
+    /* text-transform:uppitalcase:Chuyển đổi chữ hoa thành chữ thường */
+}
+
+.lower{
+    text-transform: lowercase;
+    /* text-transform:lowercase:Chuyển đổi chữ thường thành chữ hoa */
+}
+
+.capital{
+    text-transform:capitalize;
+    /* text-transform:capitalcase:Chữ cái đầu sẽ được viết hoa */
+}
+
+.none{
+    text-transform: none;
+    /* text-transform:none:Giữ nguyên chữ mặc định */
+}
+
+.center{
+    text-align: center;
+    /* text-align:center:Căn lề giữa */
+}
+
+.left{
+    text-align: left;
+    /* text-align:left:Căn lề trái */
+}
+
+.right{
+    text-align: right;
+    /* text-align:right:Căn lề phải */
+}
+
+.justify{
+    text-align: justify;
+    /* text-align:justify:Căn chỉnh dòng chữ đều nhau  */
+}
+
+.decoration{
+    text-decoration-line: line-through;
+    /* text-decoration-line:Trang trí đoạn văn bản,VD:gạch chân,gạch ngang,gạch trên.... */
+    text-decoration-color: red;
+    /* text-decoration-color:Tuỳ chỉnh màu sắc cho line,VD:red,blue,... */
+    text-decoration-style:dashed;
+    /* text-decoration-style:Tuỳ chỉnh kiểu dáng cho line,Vd:dashed,solid,double.... */
+    text-decoration-thickness: 3px;
+    /* text-decoration-thickness:Tuỳ chỉnh độ dày của đường line,VD:2px,2%,2em... */
+    text-decoration: underline blue solid 2px ;
+    /* text-decoration: line,color,style,thickness */
+}
+
+.indent{
+    text-indent: 20px;
+    /* text-indent:Từ đầu tiên của dòng đầu tiên thụt vào 20px */
+}
+
+.letterspacing{
+    letter-spacing: 20px;
+    /* letter-spacing:Khoảng cách giữa các ký tự là 20px */
+}
+
+.lineheight{
+    line-height: 50px;
+    /* line-height:Khoảng cách giữa các dòng là 50px */
+}
+
+.wordspacing{
+    word-spacing: 20px;
+    /* word-spacing:Khoảng cách giữa các chữ */
+}
+
+.whitespace{
+    white-space:pre-line;
+    /* white-space:Khoảng cách giữa các khoảng trắng */
+}
+
+.textshadow{
+    text-shadow: 2px 3px 5px red ;
+    /* text-shadow:đổ bóng cho chữ
+    text-shadow: bóng ngang , bóng dọc , độ mờ của bóng , màu bóng
+    */
+}
+
+

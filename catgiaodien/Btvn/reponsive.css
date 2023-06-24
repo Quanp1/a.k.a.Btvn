@@ -1,0 +1,94 @@
+@media all and (max-width:600px) {
+
+    .Create-Account_container{
+        display: block;
+    }
+
+
+.Create-Account_container .Create-Account_img{
+    display: none;
+}
+
+.Create-Account_container .Create-Account_form{
+    width: 90%;
+    display: block;
+    margin: 56px auto;    
+}
+
+.Create-Account_container .Create-Account_form h2{
+    font-size: 2.25rem ;
+}
+
+.Create-Account_container .Create-Account_form p{
+    font-size: 0.9375rem;
+    font-weight: 400;
+    margin-bottom:7px;
+}
+
+.Create-Account_container .Create-Account_form form label{
+    margin-left: 6px;
+}
+
+
+.Create-Account_container .Create-Account_form form input{
+    height: 60px;
+    padding-left: 12px;
+    /* max-width:343px; */
+    margin: 0 0 13px;
+}
+
+.Create-Account_container .Create-Account_form form input:nth-child(11){
+    font-size: 1.375rem;
+}
+
+.Create-Account_container .Create-Account_form .ngancach {
+    max-width: 560px;
+    margin: 18px auto 19px ;
+}
+
+
+.Create-Account_container .Create-Account_form .ngancach span {
+    width:300px;
+    height: 1px;
+}
+
+
+
+
+
+
+
+
+
+.Create-Account_container .Create-Account_form .ctnFacebook{
+    height: 60px;
+}
+
+.Create-Account_container .Create-Account_form .ctnFacebook a{
+    max-width: 240px;
+    width: 63%;
+    margin: 13px auto;
+}
+
+.Create-Account_container .Create-Account_form .ctnFacebook a img{
+    width: 32px;
+    height: 33px;
+}
+
+
+.Create-Account_container .Create-Account_form .ctnGoogle{
+    height: 60px;
+}
+
+.Create-Account_container .Create-Account_form .ctnGoogle a{
+    max-width: 240px;
+    width: 63%;
+    margin: 13px auto;
+}
+
+.Create-Account_container .Create-Account_form .ctnGoogle a img{
+    width: 32px;
+    height: 33px;
+}
+
+}

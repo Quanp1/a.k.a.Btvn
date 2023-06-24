@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,th,td{
+            border: 1px solid #ccc;
+        }
+        table{
+            width: 300px;
+            height: 100px;
+            border-radius: 20%;
+            border-collapse: collapse;
+        }
+         td{
+            text-align:center;
+        }
+        th,td{
+            padding: 20px 10px;
+
+        }
+        table,td,th{
+            /* border-spacing: 30px; */
+        } 
+
+    </style>
+</head>
+<body>
+    <!-- HTML Iframes -->
+    <h1>
+        <p>
+            <iframe width="600px" height="600px" src="https://chat.openai.com/chat" frameborder="0"></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ssIiBm0ORuI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ML6n7rqOnRU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </p>
+    </h1>
+
+    <!-- HTML Table -->
+    <table>
+        <caption>Anh nay khong co cap,anh nay chi co em</caption>
+        <colgroup>
+        <!-- <col span="2" style="background-color: red;"> -->
+        </colgroup>
+        <thead>
+            <tr>
+                <!-- tr:table row -->
+                <!-- th:table head -->
+                <!-- td:table description/ data -->
+                <th colspan="1" style="background-color: red;">Name</th>
+                <th colspan="1">Age</th>
+                <th colspan="1">Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Nguyen Van A</td>
+                <td>18</td>
+                <td>Lao Cai</td>
+            </tr>
+        </tbody>
+        <tfooter>
+            <tr> 
+                <Td>Pham Hong Q</Td>
+                <Td>20</Td>
+                <Td>Ha Noi</Td>
+            </tr>
+        </tfooter>
+    </table>
+</body>
+</html>
